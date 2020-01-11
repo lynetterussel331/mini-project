@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  username: string;
+  private username: string;
 
   constructor() { }
 

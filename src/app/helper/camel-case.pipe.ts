@@ -1,6 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { type } from 'os';
-import { stringify } from 'querystring';
 
 @Pipe({
   name: 'camelCase'

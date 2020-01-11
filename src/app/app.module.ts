@@ -8,17 +8,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CamelCasePipe } from './helper/camel-case.pipe';
+import { EmployeeListComponent } from './dashboard/employee-list/employee-list.component';
+import { EmployeeFormComponent } from './dashboard/employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    EmployeeListComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,8 @@ import { CamelCasePipe } from './helper/camel-case.pipe';
     FormsModule,
     PanelModule,
     ButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TableModule
   ],
   providers: [ CamelCasePipe ],
   bootstrap: [ AppComponent ]
