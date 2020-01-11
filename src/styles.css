@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+.ui-inputgroup {
+    padding: 5px;
+}
+
+.inputtext {
+    font-family: 'Calibri';
+    font-size: 14px;
+    width: 260px;
+}
+
+.center-login {
+    margin: 0 auto;
+    width: 300px;
+}
+
+.ui-button-text {
+    margin: 0 auto;
+    width: 245px;
+}
