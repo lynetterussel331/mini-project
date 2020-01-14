@@ -17,5 +17,11 @@
 
 .ui-button-text {
     margin: 0 auto;
-    width: 245px;
+}
+
+.input-label {
+    font-family: 'Calibri';
+    font-weight: bold;
+    font-size: 14px;
+    color: #191919;
 }

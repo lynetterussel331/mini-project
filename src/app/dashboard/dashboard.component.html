@@ -1,6 +1,6 @@
-<p>
-    Welcome, {{ username }}
+<div>
+    <h3>Welcome, {{ username }}</h3>
 
-    <app-employee-list></app-employee-list>
-
-</p>
+    <app-employee-form [selectedData]="formData"></app-employee-form>
+    <app-employee-list (isSelectedRow)="setFormData($event)"></app-employee-list>
+</div>

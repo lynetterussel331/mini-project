@@ -7,9 +7,14 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-employee>
-        <tr>
+        <tr [pSelectableRow]="employee" (click)="selectRow(employee)">
             <td *ngFor="let col of columns">
-                {{ employee[col.field] }}
+                <span *ngIf="col.field != 'CV'; else link" >
+                    {{ employee[col.field] }}
+                </span>
+                <ng-template #link>
+                    <a [href]="employee[col.field]">View</a>
+                </ng-template>
             </td>
         </tr>
     </ng-template>

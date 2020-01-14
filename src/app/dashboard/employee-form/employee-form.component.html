@@ -1,1 +1,41 @@
-<p>employee-form works!</p>
+<p-sidebar [(visible)]="display" position="left">
+    <h3>Lead Information</h3>
+    <div class="input-label">First Name</div>
+    <div class="ui-inputgroup">
+        <input class="inputtext" type="text" [(ngModel)]="employee.firstName" pInputText/>
+    </div>
+    <div class="input-label">Last Name</div>
+    <div class="ui-inputgroup">
+        <input class="inputtext" type="text" [(ngModel)]="employee.lastName" pInputText/>
+    </div>
+    <div class="input-label">Country</div>
+    <div class="ui-inputgroup">
+        <input class="inputtext" type="text" [(ngModel)]="employee.country" pInputText/>
+    </div>
+    <div class="input-label">Nationality</div>
+    <div class="ui-inputgroup">
+        <input class="inputtext" type="text" [(ngModel)]="employee.nationality" pInputText/>
+    </div>
+    <div class="input-label">Company</div>
+    <div class="ui-inputgroup">
+        <input class="inputtext" type="text" [(ngModel)]="employee.company" pInputText/>
+    </div>
+    <div class="input-label">Designation</div>
+    <div class="ui-inputgroup">
+        <input class="inputtext" type="text" [(ngModel)]="employee.designation" pInputText/>
+    </div>
+    <div class="input-label">Work Experience</div>
+    <div class="ui-inputgroup">
+        <input class="inputtext" type="text" [(ngModel)]="employee.workExperience" pInputText/>
+    </div>
+    <div class="input-label">CV</div>
+    <div class="ui-inputgroup">
+        <input class="inputtext" type="file" [(ngModel)]="employee.CV" pInputText/>
+    </div>
+    <div class="ui-g-6">
+        <p-button label="Insert" (click)="insert()"></p-button>
+    </div>
+    <div class="ui-g-6">
+        <p-button label="Clear" (click)="clear()"></p-button>
+    </div>
+</p-sidebar>

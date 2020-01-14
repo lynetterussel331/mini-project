@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { EmployeeService, Employee } from '../service/employee/employee.service';
-
-export interface Column {
-  field: string;
-  header: string;
-}
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { EmployeeService, Employee, Column } from '../service/employee/employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -12,6 +7,8 @@ export interface Column {
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
+
+  @Output() isSelectedRow = new EventEmitter<{ isSelectedRow: boolean, employee: Employee }>();
 
   employeeList: Employee[];
   columns: Column[];
@@ -22,18 +19,11 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
     this.employeeList = this.employeeService.getEmployeeList();
+    this.columns = this.employeeService.getColumns();
+  }
 
-    this.columns = [
-      { field: 'firstName', header: 'First Name' },
-      { field: 'lastName',  header: 'Last Name' },
-      { field: 'country',   header: 'Country' },
-      { field: 'nationality', header: 'Nationality' },
-      { field: 'company',   header: 'Company' },
-      { field: 'designation', header: 'Designation' },
-      { field: 'workExperience', header: 'Work Experience' },
-      { field: 'CV',        header: 'CV' },
-      { field: 'dataSource', header: 'Data Source' }
-    ];
+  selectRow(employee: Employee) {
+    this.isSelectedRow.emit( { isSelectedRow: true, employee: employee } );
   }
 
 }

@@ -21,10 +21,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.username === 'lynetteRussel' && this.password === 'test') {
-      this.loginService.setUsername(this.username);
-      this.router.navigateByUrl('dashboard');
-    }
+    this.loginService.setUsername(this.username);
+    this.router.navigateByUrl('dashboard');
   }
 
 }

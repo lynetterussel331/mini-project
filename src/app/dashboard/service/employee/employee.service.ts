@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export interface Employee {
+export class Employee {
   firstName: string;
   lastName: string;
   country: string;
@@ -12,6 +12,11 @@ export interface Employee {
   dataSource: string;
 }
 
+export interface Column {
+  field: string;
+  header: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +25,24 @@ export class EmployeeService {
   private employeeList: Employee[];
 
   constructor() { }
+
+  getColumns(): Column[] {
+    return [
+      { field: 'firstName', header: 'First Name' },
+      { field: 'lastName',  header: 'Last Name' },
+      { field: 'country',   header: 'Country' },
+      { field: 'nationality', header: 'Nationality' },
+      { field: 'company',   header: 'Company' },
+      { field: 'designation', header: 'Designation' },
+      { field: 'workExperience', header: 'Work Experience' },
+      { field: 'CV',        header: 'CV' },
+      { field: 'dataSource', header: 'Data Source' }
+    ];
+  }
+
+  addEmployee(employee: Employee) {
+    this.employeeList.push(employee);
+  }
 
   getEmployeeList(): Employee[] {
     return this.employeeList = [
@@ -32,7 +55,7 @@ export class EmployeeService {
         designation: 'Software Engineer', 
         workExperience: 8, 
         CV: '', 
-        dataSource: '' 
+        dataSource: 'Facebook' 
       },
       { 
         firstName: 'Cara',
